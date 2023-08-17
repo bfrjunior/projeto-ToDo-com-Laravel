@@ -1,0 +1,33 @@
+Entidades
+
+-Usuário
+usuário X tarefas
+
+-Tarefas (um usuário pode criar varias tarefas)
+
+-usuário categoria
+um usuário pode ter varias categoria
+
+-categorias
+categorias x tarefasuma categoria pode ter varias tarefas
+
+Detalhameto das migrations
+
+-Usuário(users)
+padrão do laravel
+
+-tarefa:(tasks)
+-id
+-titulo
+-Detalhameto-descrição
+-categoria_id
+-usuário_id
+
+-categoria:(categories)
+-id
+-nome
+-cor(hexadecimal)
+-user_id
+
+
+
