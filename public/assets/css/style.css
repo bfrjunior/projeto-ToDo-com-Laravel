@@ -42,7 +42,9 @@ nav{
 .btn{
     padding: 20px 30px;
     border-radius: 10px;
-  transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border: 0;
+    cursor: pointer;
 }
 .btn:hover{
     transform: scale(1.05);
@@ -217,3 +219,4 @@ h2{
     border-radius: 10px;
     border: 1px solid #333;
 }
+
