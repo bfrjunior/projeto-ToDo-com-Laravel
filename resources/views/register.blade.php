@@ -10,6 +10,13 @@
         <h1>Registrar-se</h1>
         <form method="POST" action="{{ route('user.register_action') }}">
             @csrf
+            @if ($errors->any())
+                <ul class="alert alert-error">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
             <x-form.text_input name="name" label="Seu Nome" placeholder="Seu Nome" />
             <x-form.text_input name="email" label="Seu Email" type="email" required="required"
                 placeholder="Seu Email" />
