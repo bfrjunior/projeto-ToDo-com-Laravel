@@ -10,10 +10,12 @@
         <h1>Editar Tarefa</h1>
         <form method="POST" action="{{ route('task.edit_action') }}">
             @csrf
+            <input type="hidden" name="id" value="{{ $task->id }}" />
             <x-form.text_input name="title" label="Título da task" placeholder="Digite o titulo da tarefa"
                 value="{{ $task->title }}" />
-            <x-form.text_input name="due_date" label="Data de Realização" type="date" required="required"
+            <x-form.text_input name="due_date" label="Data de Realização" type="datetime-local" required="required"
                 value="{{ $task->due_date }}" />
+
             <x-form.select_input name="category_id" label="Categoria">
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @if ($category->id == $task->category_id) selected @endif>
