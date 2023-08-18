@@ -10,6 +10,7 @@ Route::get('/task/new', [TaskController::class, 'create'])->name('task.create');
 Route::get('/task/edit', [TaskController::class, 'edit'])->name('task.edit');
 Route::get('/task/delete', [TaskController::class, 'delete'])->name('task.delete');
 Route::get('/task', [TaskController::class, 'index'])->name('task.view');
+Route::post('/task/create_action', [TaskController::class, 'create_action'])->name('task.create_action');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
