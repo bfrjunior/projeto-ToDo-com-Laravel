@@ -188,11 +188,11 @@ h2{
     padding-left: 10px;
     font-weight: bold;
 }
-#create_task_section{
+#task_section{
     margin: auto;
     padding-top: 20px;
 }
-#create_task_section>h1{
+#task_section>h1{
     text-align: center;
     margin-bottom:20px;
 }
