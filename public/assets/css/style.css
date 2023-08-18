@@ -200,23 +200,27 @@ h2{
     display: block;
     margin: 10px;
 
+
 }
 .inputArea>label{
     display: block;
-
+    margin-left: 5px;
     margin-bottom: 5px;
 }
 .inputArea>input,.inputArea>select{
     height: 40px;
     width: 400px;
-    border-radius: 10px;
-    border: 1px solid #333;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     padding: 5px 10px;
+    background-color: rgb(255,255,255,0.5);
 }
 .inputArea>textarea{
     height: 120px;
     width: 400px;
     border-radius: 10px;
-    border: 1px solid #333;
+    border: 1px solid #ccc;
+    background-color: rgb(255,255,255,0.5);
+
 }
 
