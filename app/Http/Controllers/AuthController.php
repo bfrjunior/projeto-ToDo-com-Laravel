@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -14,5 +15,19 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         return view('register');
+    }
+
+    public function register_action(Request $request)
+    {
+        $request->validate([
+            'name' => 'required', 'email' => 'required|email|unique:users',
+
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $data = $request->only('name', 'email', 'password');
+
+        User::create($data);
+        return redirect(route('login'));
     }
 }
