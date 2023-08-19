@@ -10,10 +10,23 @@ class Homecontroller extends Controller
 {
     public function index(Request $request)
     {
-        $tasks = Task::all()->take(4);
-        $AuthUser = Auth::user();
+        if ($request->date) {
+            $filteredDate = $request->date;
+        } else {
+            $filteredDate = date('Y-m-d');
+        }
 
+        $data['date_as_string'] = '23 de Out';
+        $data['date_prev_button'] = '2022-11-01';
+        $data['date_next_button'] = '2023-08-19';
 
-        return view('home', ['tasks' => $tasks, 'AuthUser' => $AuthUser]);
+        $data['tasks'] = Task::whereDate('due_date', $filteredDate)->get();
+
+        $data['authUser'] = Auth::user();
+
+        $data['tasks_count'] = $data['tasks']->count();
+        $data['undone_tasks_count'] = $data['tasks']->where('is_done', false)->count();
+
+        return view('home', $data);
     }
 }

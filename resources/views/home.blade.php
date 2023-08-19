@@ -12,18 +12,23 @@
             <h2>Progresso do dia </h2>
             <div class="graph_header_line"></div>
             <div class="graph_hearde-date">
-                <img src="/assets/images/icon-prev.png"></img>
-                13 de Dez
-                <img src="/assets/images/icon-next.png"></img>
+                <a href="{{ route('home', ['date' => $date_prev_button]) }}">
+                    <img src="/assets/images/icon-prev.png"></img>
+                </a>
+                {{ $date_as_string }}
+                <a href="{{ route('home', ['date' => $date_next_button]) }}">
+                    <img src="/assets/images/icon-next.png"></img>
+                </a>
             </div>
         </div>
-        <div class="graph_hearde-subtitle">Tarefas <b>3/6</b></div>
+        <div class="graph-header-subtitle">
+            Tarefas: <b>{{ $tasks_count - $undone_tasks_count }}/{{ $tasks_count }}</b>
+        </div>
         <div class="graph-placeholder">
         </div>
-        <div class="task_left_footer">
-            <img src="/assets/images/icon-info.png" />
-            Restam 3 tarefas para serem realizadas
-
+        <div class="task-left-footer">
+            <img src="/assets/images/icon-info.png" alt="">
+            Restam {{ $undone_tasks_count }} tarefas para serem realizadas.
         </div>
     </section>
     <section class="list">
