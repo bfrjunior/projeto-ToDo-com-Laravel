@@ -33,10 +33,34 @@
     </section>
     <section class="list">
         <div class="list_header">
-            <select class="list_header_select">
-                <option value="1">Todas as tarefas</option>
+            <select class="list_header_select" onchange="changeTaskStatusFilter(this)">
+                <option value="all_task">Todas as tarefas</option>
+                <option value="task_pending">Tarefas Pendentes</option>
+                <option value="task_done">Tarefas Realizadas</option>
+
             </select>
         </div>
+        <script>
+            function changeTaskStatusFilter(element) {
+                showAllTasks();
+
+                if (element.value == 'task_pending') {
+                    document.querySelectorAll('.task_done').forEach(function(e) {
+                        e.style.display = 'none';
+                    });
+                } else if (element.value == 'task_done') {
+                    document.querySelectorAll('.task_peding').forEach(function(e) {
+                        e.style.display = 'none';
+                    });
+                }
+            }
+
+            function showAllTasks() {
+                document.querySelectorAll('.task').forEach(function(e) {
+                    e.style.display = "flex";
+                });
+            }
+        </script>
         <div class="task_list">
             @foreach ($tasks as $task)
                 <x-task :data=$task />
