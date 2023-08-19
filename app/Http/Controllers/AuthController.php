@@ -11,6 +11,9 @@ class AuthController extends Controller
 {
     public function index(Request $request)
     {
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }
         //dd(Auth::user());
         return view('login');
     }
@@ -24,6 +27,10 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }
+
         return view('register');
     }
 
@@ -40,5 +47,11 @@ class AuthController extends Controller
 
         User::create($data);
         return redirect(route('login'));
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
