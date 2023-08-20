@@ -2,7 +2,8 @@
 
 Bem-vindo ao Projeto Todo, um agendador de tarefas desenvolvido em Laravel que permite aos usuários gerenciar suas tarefas de forma eficiente.
 
-![Todo App Screenshot](![image](https://github.com/bfrjunior/projeto-ToDo-com-Laravel/assets/66083278/cffc3fd7-9ee1-42f3-9de6-ef042008b0e1))
+![Todo App Screenshot](<img width="941" alt="dash" src="https://github.com/bfrjunior/projeto-ToDo-com-Laravel/assets/66083278/95c7db4b-4e55-4abc-8e33-828febc75b25">
+)
 
 ## Funcionalidades
 
