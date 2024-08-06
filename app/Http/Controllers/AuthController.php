@@ -15,7 +15,7 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
         //dd(Auth::user());
-        return view('login');
+        return view('register');
     }
     public function login_action(Request $request)
     {
@@ -31,7 +31,7 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
 
-        return view('register');
+        return view('login');
     }
 
     public function register_action(Request $request)
