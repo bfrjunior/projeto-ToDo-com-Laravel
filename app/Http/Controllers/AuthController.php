@@ -30,6 +30,7 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+
         if (Auth::check()) {
             return redirect()->route('home');
         }
@@ -39,6 +40,15 @@ class AuthController extends Controller
 
     public function register_action(Request $request)
     {
+        // Obtém a URL completa
+$currentUrl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+// Remove os parâmetros de consulta
+$cleanUrl = strtok($currentUrl, '?');
+
+// Exibe a URL limpa
+echo $cleanUrl;
+
         $request->validate([
             'name' => 'required', 'email' => 'required|email|unique:users',
 

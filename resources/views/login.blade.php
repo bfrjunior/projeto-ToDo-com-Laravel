@@ -18,7 +18,7 @@
 
         </form>
         <form action="register">
-            <button class="btn" type="submit" action="register"
+            <button class="btn" type="submit"
                 style="width: 100px; height: 55px;padding: 4px 8px;margin-left:10px;">Cadastrar</button>
         </form>
     </section>
