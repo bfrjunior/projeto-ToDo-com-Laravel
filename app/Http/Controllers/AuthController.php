@@ -15,8 +15,11 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
         //dd(Auth::user());
-        return view('register');
+        return view('login');
     }
+
+
+
     public function login_action(Request $request)
     {
         $validator = $request->validate(['email' => 'required|email', 'password' => 'required|min:6']);
